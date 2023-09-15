@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Ela's Learning</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- CSS Dependencies -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="main.css" />
+    </head>
+
+    <body>
+        <!-- start of navigation header -->
+        <div class="navigation">
+            <nav
+                class="navbar navbar-expand-lg navbar-dark"
+                style="
+                    background-image: linear-gradient(
+                        to top,
+                        #30cfd0 0%,
+                        #330867 100%
+                    );
+                ">
+                <img
+                    src="images/logo.jpeg"
+                    alt="Some text about the image"
+                    class="mr-2"
+                    height="60px"
+                    width="80px" />
+                <a class="navbar-brand" href="index.html">Ela's Learning</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNavDropdown-1"
+                    aria-controls="navbarNavDropdown-1"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown-1">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html"
+                                >Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="https://designrevision.com"
+                                id="navbarDropdownMenuLink"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Technology and Languages
+                            </a>
+                            <div
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#"
+                                    >HTML and CSS</a
+                                >
+                                <a class="dropdown-item" href="#">Javascript</a>
+                                <a class="dropdown-item" href="mypython.html"
+                                    >Python</a
+                                >
+                                <a class="dropdown-item" href="#">Java</a>
+                                <a class="dropdown-item" href="#"
+                                    >React and AWS</a
+                                >
+                                <a class="dropdown-item" href="#">Other</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Learning Resources</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- end of navigation header -->
+
+        <!-- End of React.js deployed to AWS -->
+
+        <div class="container my-5">
+            <h2>React.js and the AWS Cloud</h2>
+            <br />
+            
+                    
+        <p>I have been hearing a lot about Cloud Computing, so I have learnt the basics of this. Amazon is one of the biggest cloud platforms, so I learnt how to create and deploy a simple React.js application to the AWS Cloud!
+        </p>
+        <p>
+        Whilst the appliation itself is really simple, the purpose of this was to learn about AWS, so I'm happy with what I achieved here!
+        </p>
+
+        
+        <p>Here is a <a href="https://main.d2i1wsl3cvjbq1.amplifyapp.com/">link to the running application deployed to the AWS Cloud.</a>
+        </p>
+      
+        <!-- start of footer -->
+
+        <div class="navigation">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNavDropdown-2"
+                    aria-controls="navbarNavDropdown-2"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown-2">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{about-us}"
+                                >Contact Me</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <footer class="main-footer py-5">
+            <p class="text-muted text-center small p-0 mb-4">
+                &copy; Copyright 2023 — Ela Morgan
+            </p>
+        </footer>
+
+        <!-- end of footer -->
+
+        <!-- Optional JavaScript -->
+        <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    </body>
+</html>
