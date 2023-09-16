@@ -599,8 +599,6 @@ What is your name?: Jack
 What's your bid?: £130
 Are there any other bidders? Type 'yes or 'no'no
 The winner is Jack with a bid of £130
-
-
                   </pre
                     >
                 </div>
@@ -608,6 +606,130 @@ The winner is Jack with a bid of £130
         </div>
         
         <!-- End of Secret Auction -->
+        
+        <!-- Calculator --> 
+
+<div class="container my-5">
+            <div class="card">
+                <div
+                    class="card-header"
+                    style="
+                        background-image: radial-gradient(
+                            circle,
+                            rgba(153, 183, 237, 1) 0%,
+                            rgba(198, 232, 235, 1) 100%
+                        );
+                    ">
+                    Calculator
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">This is the code</h5>
+
+                    <pre>
+                                   
+from art import logo
+def add(n1, n2):
+  return n1 + n2
+
+def sub(n1, n2):
+  return n1 - n2
+
+def mul(n1, n2):
+  return n1 * n2
+
+def div(n1, n2):
+  return n1 / n2
+
+operations = {
+  "+" : add,
+  "-" : sub,
+  "*" : mul,
+  "/" : div,
+}
+
+
+def calculation():
+  print(logo)
+  running = True
+  num1 = float(input("Choose a number: "))
+  for symbol in operations:
+    print(symbol)
+  
+  while running:
+    operations_symbol = input("Pick an operation: ")
+    num2 = float(input("Choose another number: "))
+    calculation_function = operations[operations_symbol]
+    answer = calculation_function(num1, num2)
+
+    print(f"{num1} {operations_symbol} {num2} = {answer}")
+
+    if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start again. ") == 'y':
+      num1 = answer
+    else:
+      running = False
+      calculation()
+    
+    
+calculation()
+  </pre
+                    >
+
+                    <h5 class="card-title">This is the output</h5>
+
+                    <pre>
+
+ _____________________
+|  _________________  |
+| | Pythonista   0. | |  .----------------.  .----------------.  .----------------.  .----------------. 
+| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+| |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
+| | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
+| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
+|_____________________|
+
+Choose a number: 79
++
+-
+*
+/
+Pick an operation: *
+Choose another number: 68
+79.0 * 68.0 = 5372.0
+Type 'y' to continue calculating with 5372.0, or type 'n' to start again. y
+Pick an operation: /
+Choose another number: 5
+5372.0 / 5.0 = 1074.4
+Type 'y' to continue calculating with 1074.4, or type 'n' to start again. n
+
+ _____________________
+|  _________________  |
+| | Pythonista   0. | |  .----------------.  .----------------.  .----------------.  .----------------. 
+| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+| |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
+| | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
+| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
+|_____________________|
+
+Choose a number: 
+                  </pre
+                    >
+                </div>
+            </div>
+        </div>
+        
+        <!-- End of Calculator -->
         
         
 
