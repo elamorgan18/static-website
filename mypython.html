@@ -424,7 +424,7 @@ _ l i _ _ _ _ _
                             rgba(198, 232, 235, 1) 100%
                         );
                     ">
-                    Ceasar Cipher
+                    Caesar Cipher
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">This is the code</h5>
@@ -514,6 +514,100 @@ Goodbye
         </div>
         
         <!-- End of Caeser Cipher -->
+        
+
+         <!-- Secret Auction --> 
+
+<div class="container my-5">
+            <div class="card">
+                <div
+                    class="card-header"
+                    style="
+                        background-image: radial-gradient(
+                            circle,
+                            rgba(153, 183, 237, 1) 0%,
+                            rgba(198, 232, 235, 1) 100%
+                        );
+                    ">
+                    Secret Auction
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">This is the code</h5>
+
+                    <pre>
+                                   
+from replit import clear
+import art
+
+print(art.logo)
+
+bids = {}
+bidding_finished = False
+
+def find_highest_bidder(bidding_record):
+  highest_bid = 0 
+  for bidder in bidding_record:
+    bid_amount = bidding_record[bidder]
+    if bid_amount > highest_bid:
+      highest_bid = bid_amount
+      winner = bidder
+  print(f"The winner is {winner} with a bid of £{highest_bid}")
+
+while not bidding_finished:
+  name = input("What is your name?: ")
+  price = int(input("What's your bid?: £"))
+  bids[name] = price
+  should_contine = input("Are there any other bidders? Type 'yes or 'no'").lower()
+  if should_contine == 'no':
+    bidding_finished = True
+    find_highest_bidder(bids)
+  elif should_contine == 'yes':
+    clear()
+  
+  </pre
+                    >
+
+                    <h5 class="card-title">This is the output</h5>
+
+                    <pre>
+
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\
+                       .-------------.
+                      /_______________\
+
+What is your name?: Ela
+What's your bid?: £100
+Are there any other bidders? Type 'yes or 'no' yes
+
+***NEW SCREEN***
+
+What is your name?: Richard
+What's your bid?: £70
+Are there any other bidders? Type 'yes or 'no' yes
+
+***NEW SCREEN***
+
+What is your name?: Jack
+What's your bid?: £130
+Are there any other bidders? Type 'yes or 'no'no
+The winner is Jack with a bid of £130
+
+
+                  </pre
+                    >
+                </div>
+            </div>
+        </div>
+        
+        <!-- End of Secret Auction -->
         
         
 
