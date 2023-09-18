@@ -109,8 +109,7 @@
                     <h5 class="card-title">This is the code</h5>
 
                     <pre>
-                  
-                  
+                           
 print('''
 *******************************************************************************
           |                   |                  |                     |
@@ -410,6 +409,467 @@ _ l i _ _ _ _ _
                 </div>
             </div>
         </div>
+        
+        
+        <!-- Caeser Cipher --> 
+
+<div class="container my-5">
+            <div class="card">
+                <div
+                    class="card-header"
+                    style="
+                        background-image: radial-gradient(
+                            circle,
+                            rgba(153, 183, 237, 1) 0%,
+                            rgba(198, 232, 235, 1) 100%
+                        );
+                    ">
+                    Caesar Cipher
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">This is the code</h5>
+
+                    <pre>
+                                   
+import art 
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+def caesar(start_text, shift_amount, cipher_direction):
+  end_text = ""
+  if cipher_direction == "decode":
+    shift_amount *= -1
+  for char in start_text:
+    if char in alphabet:
+      position = alphabet.index(char)
+      new_position = position + shift_amount
+      end_text += alphabet[new_position]
+    else:
+      end_text += char
+
+    
+print(f"Here's the {cipher_direction}d result: {end_text}")
+
+should_continue = True
+while should_continue:
+  direction= input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+  text = input("Type your message:\n").lower()
+  shift = int(input("Type the shift number:\n"))
+
+  shift = shift % 26
+
+  caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
+
+  result = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n")
+  if result == "no":
+    should_continue = False
+    print("Goodbye")
+  
+  </pre
+                    >
+
+                    <h5 class="card-title">This is the output</h5>
+
+                    <pre>
+
+           
+ ,adPPYba, ,adPPYYba,  ,adPPYba, ,adPPYba, ,adPPYYba, 8b,dPPYba,  
+a8"     "" ""     `Y8 a8P_____88 I8[    "" ""     `Y8 88P'   "Y8  
+8b         ,adPPPPP88 8PP"  `"Y8ba,  ,adPPPPP88 88          
+"8a,   ,aa 88,    ,88 "8b,   ,aa aa    ]8I 88,    ,88 88          
+ `"Ybbd8"' `"8bbdP"Y8  `"Ybbd8"' `"YbbdP"' `"8bbdP"Y8 88   
+            88             88                                 
+           ""             88                                 
+                          88                                 
+ ,adPPYba, 88 8b,dPPYba,  88,dPPYba,   ,adPPYba, 8b,dPPYba,  
+a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8  
+8b         88 88       d8 88       88 8PP" 88          
+"8a,   ,aa 88 88b,   ,a8" 88       88 "8b,   ,aa 88          
+ `"Ybbd8"' 88 88`YbbdP"'  88       88  `"Ybbd8"' 88          
+              88                                             
+              88           
+
+Type 'encode' to encrypt, type 'decode' to decrypt:
+encode
+Type your message:
+hello
+Type the shift number:
+5
+Here's the encoded result: mjqqt
+Type 'yes' if you want to go again. Otherwise type 'no'.
+yes
+Type 'encode' to encrypt, type 'decode' to decrypt:
+decode
+Type your message:
+mjqqt
+Type the shift number:
+5
+Here's the decoded result: hello
+Type 'yes' if you want to go again. Otherwise type 'no'.
+no
+Goodbye
+                  </pre
+                    >
+                </div>
+            </div>
+        </div>
+        
+        <!-- End of Caeser Cipher -->
+        
+
+         <!-- Secret Auction --> 
+
+<div class="container my-5">
+            <div class="card">
+                <div
+                    class="card-header"
+                    style="
+                        background-image: radial-gradient(
+                            circle,
+                            rgba(153, 183, 237, 1) 0%,
+                            rgba(198, 232, 235, 1) 100%
+                        );
+                    ">
+                    Secret Auction
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">This is the code</h5>
+
+                    <pre>
+                                   
+from replit import clear
+import art
+
+print(art.logo)
+
+bids = {}
+bidding_finished = False
+
+def find_highest_bidder(bidding_record):
+  highest_bid = 0 
+  for bidder in bidding_record:
+    bid_amount = bidding_record[bidder]
+    if bid_amount > highest_bid:
+      highest_bid = bid_amount
+      winner = bidder
+  print(f"The winner is {winner} with a bid of £{highest_bid}")
+
+while not bidding_finished:
+  name = input("What is your name?: ")
+  price = int(input("What's your bid?: £"))
+  bids[name] = price
+  should_contine = input("Are there any other bidders? Type 'yes or 'no'").lower()
+  if should_contine == 'no':
+    bidding_finished = True
+    find_highest_bidder(bids)
+  elif should_contine == 'yes':
+    clear()
+  
+  </pre
+                    >
+
+                    <h5 class="card-title">This is the output</h5>
+
+                    <pre>
+
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\
+                       .-------------.
+                      /_______________\
+
+What is your name?: Ela
+What's your bid?: £100
+Are there any other bidders? Type 'yes or 'no' yes
+
+***NEW SCREEN***
+
+What is your name?: Richard
+What's your bid?: £70
+Are there any other bidders? Type 'yes or 'no' yes
+
+***NEW SCREEN***
+
+What is your name?: Jack
+What's your bid?: £130
+Are there any other bidders? Type 'yes or 'no'no
+The winner is Jack with a bid of £130
+                  </pre
+                    >
+                </div>
+            </div>
+        </div>
+        
+        <!-- End of Secret Auction -->
+        
+        <!-- Calculator --> 
+
+<div class="container my-5">
+            <div class="card">
+                <div
+                    class="card-header"
+                    style="
+                        background-image: radial-gradient(
+                            circle,
+                            rgba(153, 183, 237, 1) 0%,
+                            rgba(198, 232, 235, 1) 100%
+                        );
+                    ">
+                    Calculator
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">This is the code</h5>
+
+                    <pre>
+                                   
+from art import logo
+def add(n1, n2):
+  return n1 + n2
+
+def sub(n1, n2):
+  return n1 - n2
+
+def mul(n1, n2):
+  return n1 * n2
+
+def div(n1, n2):
+  return n1 / n2
+
+operations = {
+  "+" : add,
+  "-" : sub,
+  "*" : mul,
+  "/" : div,
+}
+
+
+def calculation():
+  print(logo)
+  running = True
+  num1 = float(input("Choose a number: "))
+  for symbol in operations:
+    print(symbol)
+  
+  while running:
+    operations_symbol = input("Pick an operation: ")
+    num2 = float(input("Choose another number: "))
+    calculation_function = operations[operations_symbol]
+    answer = calculation_function(num1, num2)
+
+    print(f"{num1} {operations_symbol} {num2} = {answer}")
+
+    if input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start again. ") == 'y':
+      num1 = answer
+    else:
+      running = False
+      calculation()
+    
+    
+calculation()
+  </pre
+                    >
+
+                    <h5 class="card-title">This is the output</h5>
+
+                    <pre>
+
+ _____________________
+|  _________________  |
+| | Pythonista   0. | |  .----------------.  .----------------.  .----------------.  .----------------. 
+| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+| |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
+| | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
+| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
+|_____________________|
+
+Choose a number: 79
++
+-
+*
+/
+Pick an operation: *
+Choose another number: 68
+79.0 * 68.0 = 5372.0
+Type 'y' to continue calculating with 5372.0, or type 'n' to start again. y
+Pick an operation: /
+Choose another number: 5
+5372.0 / 5.0 = 1074.4
+Type 'y' to continue calculating with 1074.4, or type 'n' to start again. n
+
+ _____________________
+|  _________________  |
+| | Pythonista   0. | |  .----------------.  .----------------.  .----------------.  .----------------. 
+| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+| |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
+| | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
+| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------' 
+|_____________________|
+
+Choose a number: 
+                  </pre
+                    >
+                </div>
+            </div>
+        </div>
+        
+        <!-- End of Calculator -->
+        
+         <!-- Blackjack Capstone --> 
+
+<div class="container my-5">
+            <div class="card">
+                <div
+                    class="card-header"
+                    style="
+                        background-image: radial-gradient(
+                            circle,
+                            rgba(153, 183, 237, 1) 0%,
+                            rgba(198, 232, 235, 1) 100%
+                        );
+                    ">
+                    Blackjack Capstone
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">This is the code</h5>
+
+                    <pre>
+import random
+from replit import clear
+from art import logo
+
+def deal_card():
+  """Returns a random card from the deck."""
+  cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+  card = random.choice(cards)
+  return card
+  
+def calculate_score(cards):
+  """Take a list of cards and return the score calculated from the cards"""
+  if sum(cards) == 21 and len(cards) == 2:
+    return 0
+    if 11 in cards and sum(cards) > 21:
+        cards.remove(11)
+        cards.append(1)
+    return sum(cards)
+    
+def compare(user_score, computer_score):
+  if user_score > 21 and computer_score > 21:
+    return "You went over. You lose 😤"
+
+  if user_score == computer_score:
+    return "Draw 🙃"
+  elif computer_score == 0:
+    return "Lose, opponent has Blackjack 😱"
+  elif user_score == 0:
+    return "Win with a Blackjack 😎"
+  elif user_score > 21:
+    return "You went over. You lose 😭"
+  elif computer_score > 21:
+    return "Opponent went over. You win 😁"
+  elif user_score > computer_score:
+    return "You win 😃"
+  else:
+    return "You lose 😤"
+
+def play_game():
+
+  print(logo)
+  
+  user_cards = []
+  computer_cards = []
+  is_game_over = False
+  
+  for _ in range(2):
+    user_cards.append(deal_card())
+    computer_cards.append(deal_card())
+
+  while not is_game_over:
+  
+    user_score = calculate_score(user_cards)
+    computer_score = calculate_score(computer_cards)
+    print(f"   Your cards: {user_cards}, current score: {user_score}")
+    print(f"   Computer's first card: {computer_cards[0]}")
+
+    if user_score == 0 or computer_score == 0 or user_score > 21:
+      is_game_over = True
+    else:
+    
+      user_should_deal = input("Type 'y' to get another card, type 'n' to pass: ")
+      if user_should_deal == "y":
+        user_cards.append(deal_card())
+      else:
+        is_game_over = True
+        
+  while computer_score != 0 and computer_score < 17:
+    computer_cards.append(deal_card())
+    computer_score = calculate_score(computer_cards)
+    
+  print(f"   Your final hand: {user_cards}, final score: {user_score}")
+  print(f"   Computer's final hand: {computer_cards}, final score: {computer_score}")
+  print(compare(user_score, computer_score))
+
+while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
+  clear()
+  play_game()
+
+  
+            </pre>
+            
+
+                    <h5 class="card-title">This is the output</h5>
+
+                    <pre>
+
+Do you want to play a game of Blackjack? Type 'y' or 'n': y
+
+*** NEW SCREEN ***
+
+.------.            _     _            _    _            _    
+|A_  _ |.          | |   | |          | |  (_)          | |   
+|( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
+| \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
+`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\
+      |  \/ K|                            _/ |                
+      `------'                           |__/           
+
+   Your cards: [10, 6], current score: 16
+   Computer's first card: 2
+Type 'y' to get another card, type 'n' to pass: y
+   Your cards: [10, 6, 5], current score: 21
+   Computer's first card: 2
+Type 'y' to get another card, type 'n' to pass: n
+   Your final hand: [10, 6, 5], final score: 21
+   Computer's final hand: [2, 4, 8, 5], final score: 19
+You win 😃
+Do you want to play a game of Blackjack? Type 'y' or 'n': 
+
+                    </pre
+                   >
+                </div>
+            </div>
+        </div>
+        
+        <!-- End of Blackjack Capstone -->
+        
+        
 
         <!-- start of footer -->
 
