@@ -92,7 +92,25 @@
 
         <div class="container my-5">
             <h2 th:case="null">My Python Projects</h2>
-            <br />
+            <br/>
+            <a href="#treasureisland">Treasure Island</a>
+            <br/>
+            <a href="#hangman">Hangman</a>
+            <br/>
+            <a href="#caesarcipher">Caesar Cipher</a>
+            <br/>
+            <a href="#secretauction">Secret Auction</a>
+            <br/>
+            <a href="#calculator">Calculator</a>
+            <br/>
+            <a href="#blackjack">Blackjack Capstone</a>
+            <br/>
+            <a href="#higherlower">Higher Lower Game</a>
+            <br/>
+            <a href="#coffee">Coffee Machine</a>
+            
+            <br/>
+            <br/>
             <div class="card">
                 <div
                     class="card-header"
@@ -106,6 +124,7 @@
                     Treasure Island Game - A mission to find the treasure!
                 </div>
                 <div class="card-body">
+                    <div id="treasureisland" class="card">
                     <h5 class="card-title">This is the code</h5>
 
                     <pre>
@@ -217,6 +236,7 @@ You found the treasure! You Win!
                     Hangman
                 </div>
                 <div class="card-body">
+                    <div id="hangman" class="card">
                     <h5 class="card-title">This is the code</h5>
 
                     <pre>
@@ -427,6 +447,7 @@ _ l i _ _ _ _ _
                     Caesar Cipher
                 </div>
                 <div class="card-body">
+                    <div id="caesarcipher" class="card">
                     <h5 class="card-title">This is the code</h5>
 
                     <pre>
@@ -532,6 +553,7 @@ Goodbye
                     Secret Auction
                 </div>
                 <div class="card-body">
+                    <div id="secretauction" class="card">
                     <h5 class="card-title">This is the code</h5>
 
                     <pre>
@@ -623,6 +645,7 @@ The winner is Jack with a bid of £130
                     Calculator
                 </div>
                 <div class="card-body">
+                    <div id="calculator" class="card">
                     <h5 class="card-title">This is the code</h5>
 
                     <pre>
@@ -747,6 +770,7 @@ Choose a number:
                     Blackjack Capstone
                 </div>
                 <div class="card-body">
+                    <div id="blackjack" class="card">
                     <h5 class="card-title">This is the code</h5>
 
                     <pre>
@@ -885,6 +909,7 @@ Do you want to play a game of Blackjack? Type 'y' or 'n':
                     Higher Lower Game 
                 </div>
                 <div class="card-body">
+                    <div id="higherlower" class="card">
                     <h5 class="card-title">This is the code</h5>
 
                     <pre>
@@ -1033,6 +1058,7 @@ Who has more followers? Type 'A' or 'B':
                     Coffee Machine
                 </div>
                 <div class="card-body">
+                    <div id="coffee" class="card">
                     <h5 class="card-title">This is the code</h5>
 
                     <pre>
@@ -1075,7 +1101,7 @@ def is_resource_sufficient(order_ingredients):
     """Returns True when order can be made, False if ingredients are insufficient."""
     for item in order_ingredients:
         if order_ingredients[item] > resources[item]:
-            print(f"​Sorry there is not enough {item}.")
+            print(f"Sorry there is not enough {item}.")
             return False
     return True
 
