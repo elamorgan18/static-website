@@ -147,10 +147,66 @@
                     <div id="fizzbuzz" class="card">
                         <h5 class="card-title">This is the code</h5>
 
-                        <pre>TODO
+                        <pre>
+package com.elamorgan.learning.fizzbuzz;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Runs the game called 'fizzbuzz' which involves handling a list of integers and
+ * returning those that are divisible by 3 or 5.
+ */
+class FizzBuzzManager {
+
+    private static final Integer BUZZ_DIVISOR = 3;
+    private static final Integer FIZZ_DIVISOR = 5;
+
+    /**
+     * Runs the game.
+     *
+     * Given a list of integers, it will return those that are divisible by 3 and/or 5.
+     * 
+     *
+     * @param numbers - the list of integers to run the game with.
+     * @return - a class containing the integers that are divisible by 3 or 5.
+     */
+    public FizzBuzzResults performFizzBuzz(List&lt;Integer&gt; numbers) {
+
+        List&lt;Integer&gt; fizzResults = new ArrayList&lt;&gt;();
+        List&lt;Integer&gt; buzzResults = new ArrayList&lt;&gt;();
+
+        if (numbers != null &amp;&amp; !numbers.isEmpty()) {
+
+            for (Integer num : numbers) {
+                if (num % BUZZ_DIVISOR == 0) {
+                    buzzResults.add(num);
+                }
+                if (num % FIZZ_DIVISOR == 0) {
+                    fizzResults.add(num);
+                }
+            }
+        }
+
+        return new FizzBuzzResults(fizzResults, buzzResults);
+    }
+}
+
+package com.elamorgan.learning.fizzbuzz;
+
+import java.util.List;
+
+/**
+ * Holds the results of running the fizzbuzz game.
+ */
+record FizzBuzzResults(List&lt;Integer&gt; fizzResults, List&lt;Integer&gt; buzzResults) {
+
+}
+
+
                         </pre>
 
-                        <h5 class="card-title">This is the output</h5>
+                        <h5 class="card-title">Here are the unit tests</h5>
 
                         <pre>
                         TODO
