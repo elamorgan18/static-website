@@ -115,13 +115,111 @@
                     <div id="evenorodd" class="card">
                         <h5 class="card-title">This is the code</h5>
 
-                        <pre>TODO
+                        <pre>
+                        
+package com.elamorgan.learning.evenorodd;
+
+/**
+ * Problem:
+ * Write a method that identifies if a given positive decimal number is even or odd
+ * without using the % or / operator.
+ */
+class EvenOrOdd {
+
+    /**
+     * Checks to see if a given positive integer is even.
+     * @param number -  the number to check.
+     * @return true it the number is even, otherwise false.
+     * @throws IllegalArgumentException - if the number is less than one.
+     */
+    boolean isEven(int number) throws IllegalArgumentException {
+
+        if (number &lt; 1) {
+            throw new IllegalArgumentException("Number cannot be less than one");
+        }
+
+        while(number >= 2) {
+            number = number - 2;
+        }
+
+        if (number == 1) {
+            return false;
+        }
+        return true;
+    }
+
+
+}
+
 
                         </pre>
 
-                        <h5 class="card-title">This is the output</h5>
+                        <h5 class="card-title">Here are the unit tests</h5>
 
-                        <pre>TODO
+                        <pre>
+                        
+package com.elamorgan.learning.evenorodd;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+/**
+ * Test class for {@link EvenOrOdd}.
+ */
+class EvenOrOddTest {
+
+    private EvenOrOdd evenOrOdd;
+
+    @BeforeEach
+    public void setup() {
+        evenOrOdd = new EvenOrOdd();
+    }
+
+    @Test
+    void isEven_WithZero() throws IllegalArgumentException {
+        assertThrows(IllegalArgumentException.class, () -> evenOrOdd.isEven(0));
+    }
+
+    @Test
+    void isEven_WithEvenNumber() throws IllegalArgumentException {
+        boolean result = evenOrOdd.isEven(12);
+        assertTrue(result);
+    }
+
+    @Test
+    void isEven_WithOddNumber() throws IllegalArgumentException {
+        boolean result = evenOrOdd.isEven(31);
+        assertFalse(result);
+    }
+
+    @Test
+    void isEven_WithManyEvenNumbers() throws IllegalArgumentException {
+        int limit = 100;
+        for (int i = 2; i &lt;= limit; i = i + 2) {
+            boolean result = evenOrOdd.isEven(i);
+            System.out.println("i is " + i);
+            System.out.println("result is " + result);
+            assertTrue(result);
+        }
+    }
+
+    @Test
+    void isEven_WithManyOddNumbers() throws IllegalArgumentException {
+        int limit = 100;
+        for (int i = 1; i &lt;= limit; i = i + 2) {
+            boolean result = evenOrOdd.isEven(i);
+            System.out.println("i is " + i);
+            System.out.println("result is " + result);
+            assertFalse(result);
+        }
+    }
+
+}
+                        
                         </pre>
                     </div>
                 </div>
