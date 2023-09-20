@@ -209,7 +209,279 @@ record FizzBuzzResults(List&lt;Integer&gt; fizzResults, List&lt;Integer&gt; buzz
                         <h5 class="card-title">Here are the unit tests</h5>
 
                         <pre>
-                        TODO
+                        
+package com.elamorgan.learning.fizzbuzz;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.jupiter.api.Test;
+
+/**
+ * Test class for {@link FizzBuzzManagerTest}.
+ */
+class FizzBuzzManagerTest {
+
+  @Test
+  void performFizzBuzz_WithNullList() {
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    FizzBuzzResults fizzBuzzResults = fizzBuzzManager.performFizzBuzz(null);
+
+    List&lt;Integer&gt; fizzList = fizzBuzzResults.fizzResults();
+    List&lt;Integer&gt; buzzList = fizzBuzzResults.buzzResults();
+
+    assertThat(fizzList, is(notNullValue()));
+    assertThat(fizzList.size(), is(0));
+
+    assertThat(buzzList, is(notNullValue()));
+    assertThat(buzzList.size(), is(0));
+  }
+
+  @Test
+  void performFizzBuzz_WithEmptyList() {
+
+    List&lt;Integer&gt; emptyList = new ArrayList&lt;&gt;();
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    FizzBuzzResults fizzBuzzResults = fizzBuzzManager.performFizzBuzz(emptyList);
+
+    List&lt;Integer&gt; fizzList = fizzBuzzResults.fizzResults();
+    List&lt;Integer&gt; buzzList = fizzBuzzResults.buzzResults();
+
+    assertThat(fizzList, is(notNullValue()));
+    assertThat(fizzList.size(), is(0));
+
+    assertThat(buzzList, is(notNullValue()));
+    assertThat(buzzList.size(), is(0));
+  }
+
+  @Test
+  void performFizzBuzz_WithSingleNonFizzNumber() {
+
+    List&lt;Integer&gt; singleNumberList = new ArrayList&lt;&gt;();
+    singleNumberList.add(1);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; fizzList = fizzBuzzManager.performFizzBuzz(singleNumberList).fizzResults();
+
+    assertThat(fizzList, is(notNullValue()));
+    assertThat(fizzList.size(), is(0));
+  }
+
+  @Test
+  void performFizzBuzz_WithSingleFizzNumber() {
+
+    List&lt;Integer&gt; singleNumberFizzList = new ArrayList&lt;&gt;();
+    singleNumberFizzList.add(5);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; fizzList = fizzBuzzManager.performFizzBuzz(singleNumberFizzList).fizzResults();
+
+    assertThat(fizzList, is(notNullValue()));
+    assertThat(fizzList.size(), is(1));
+    assertThat(fizzList.contains(5), is(true));
+
+  }
+
+  @Test
+  void performFizzBuzz_WithNoFizzNumbers() {
+
+    List&lt;Integer&gt; noMatchesFizzList = new ArrayList&lt;&gt;();
+    noMatchesFizzList.add(1);
+    noMatchesFizzList.add(2);
+    noMatchesFizzList.add(9);
+    noMatchesFizzList.add(999);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; fizzList = fizzBuzzManager.performFizzBuzz(noMatchesFizzList).fizzResults();
+
+    assertThat(fizzList, is(notNullValue()));
+    assertThat(fizzList.size(), is(0));
+  }
+
+  @Test
+  void performFizzBuzz_WithFizzNumbers() {
+
+    List&lt;Integer&gt; someMatchesFizzList = new ArrayList&lt;&gt;();
+    someMatchesFizzList.add(1);
+    someMatchesFizzList.add(5);
+    someMatchesFizzList.add(9);
+    someMatchesFizzList.add(125);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; fizzList = fizzBuzzManager.performFizzBuzz(someMatchesFizzList).fizzResults();
+
+    assertThat(fizzList, is(notNullValue()));
+    assertThat(fizzList.size(), is(2));
+    assertThat(fizzList.contains(5), is(true));
+    assertThat(fizzList.contains(125), is(true));
+  }
+
+  @Test
+  void performFizzBuzz_WithFizzNumbers_SomeNegative() {
+
+    List&lt;Integer&gt; someMatchesAndNegativeFizzList = new ArrayList&lt;&gt;();
+    someMatchesAndNegativeFizzList.add(1);
+    someMatchesAndNegativeFizzList.add(5);
+    someMatchesAndNegativeFizzList.add(-9);
+    someMatchesAndNegativeFizzList.add(-125);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; fizzList = fizzBuzzManager.performFizzBuzz(someMatchesAndNegativeFizzList).fizzResults();
+
+    assertThat(fizzList, is(notNullValue()));
+    assertThat(fizzList.size(), is(2));
+    assertThat(fizzList.contains(5), is(true));
+    assertThat(fizzList.contains(-125), is(true));
+  }
+
+  @Test
+  void performFizzBuzz_WithFizzNumbers_AllNegative() {
+
+    List&lt;Integer&gt; someMatchesAndNegativeFizzList = new ArrayList&lt;&gt;();
+    someMatchesAndNegativeFizzList.add(-101);
+    someMatchesAndNegativeFizzList.add(-5);
+    someMatchesAndNegativeFizzList.add(-1250);
+    someMatchesAndNegativeFizzList.add(-9);
+    someMatchesAndNegativeFizzList.add(-5555);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; fizzList = fizzBuzzManager.performFizzBuzz(someMatchesAndNegativeFizzList).fizzResults();
+
+    assertThat(fizzList, is(notNullValue()));
+    assertThat(fizzList.size(), is(3));
+    assertThat(fizzList.contains(-5), is(true));
+    assertThat(fizzList.contains(-1250), is(true));
+    assertThat(fizzList.contains(-5555), is(true));
+  }
+
+  @Test
+  void performFizzBuzz_WithSingleNonBuzzNumber() {
+
+    List&lt;Integer&gt; singleNumberList = new ArrayList&lt;&gt;();
+    singleNumberList.add(1);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; buzzList = fizzBuzzManager.performFizzBuzz(singleNumberList).buzzResults();
+
+    assertThat(buzzList, is(notNullValue()));
+    assertThat(buzzList.size(), is(0));
+  }
+
+  @Test
+  void performFizzBuzz_WithSingleBuzzNumber() {
+
+    List&lt;Integer&gt; singleNumberBuzzList = new ArrayList&lt;&gt;();
+    singleNumberBuzzList.add(6);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; buzzList = fizzBuzzManager.performFizzBuzz(singleNumberBuzzList).buzzResults();
+
+    assertThat(buzzList, is(notNullValue()));
+    assertThat(buzzList.size(), is(1));
+    assertThat(buzzList.contains(6), is(true));
+  }
+
+  @Test
+  void performFizzBuzz_WithNoBuzzNumbers() {
+
+    List&lt;Integer&gt; noMatchesBuzzList = new ArrayList&lt;&gt;();
+    noMatchesBuzzList.add(1);
+    noMatchesBuzzList.add(2);
+    noMatchesBuzzList.add(11);
+    noMatchesBuzzList.add(1000);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; buzzList = fizzBuzzManager.performFizzBuzz(noMatchesBuzzList).buzzResults();
+
+    assertThat(buzzList, is(notNullValue()));
+    assertThat(buzzList.size(), is(0));
+  }
+
+  @Test
+  void performFizzBuzz_WithBuzzNumbers() {
+
+    List&lt;Integer&gt; someMatchesBuzzList = new ArrayList&lt;&gt;();
+    someMatchesBuzzList.add(1);
+    someMatchesBuzzList.add(5);
+    someMatchesBuzzList.add(9);
+    someMatchesBuzzList.add(120);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; buzzList = fizzBuzzManager.performFizzBuzz(someMatchesBuzzList).buzzResults();
+
+    assertThat(buzzList, is(notNullValue()));
+    assertThat(buzzList.size(), is(2));
+    assertThat(buzzList.contains(9), is(true));
+    assertThat(buzzList.contains(120), is(true));
+  }
+
+  @Test
+  void performFizzBuzz_WithBuzzNumbers_SomeNegative() {
+
+    List&lt;Integer&gt; someMatchesAndNegativeBuzzList = new ArrayList&lt;&gt;();
+    someMatchesAndNegativeBuzzList.add(1);
+    someMatchesAndNegativeBuzzList.add(5);
+    someMatchesAndNegativeBuzzList.add(-9);
+    someMatchesAndNegativeBuzzList.add(-125);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; buzzList = fizzBuzzManager.performFizzBuzz(someMatchesAndNegativeBuzzList).buzzResults();
+
+    assertThat(buzzList, is(notNullValue()));
+    assertThat(buzzList.size(), is(1));
+    assertThat(buzzList.contains(-9), is(true));
+  }
+
+  @Test
+  void performFizzBuzz_WithBuzzNumbers_AllNegative() {
+
+    List&lt;Integer&gt; someMatchesAndNegativeBuzzList = new ArrayList&lt;&gt;();
+    someMatchesAndNegativeBuzzList.add(-101);
+    someMatchesAndNegativeBuzzList.add(-5);
+    someMatchesAndNegativeBuzzList.add(-1250);
+    someMatchesAndNegativeBuzzList.add(-9);
+    someMatchesAndNegativeBuzzList.add(-999);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; buzzList = fizzBuzzManager.performFizzBuzz(someMatchesAndNegativeBuzzList).buzzResults();
+
+    assertThat(buzzList, is(notNullValue()));
+    assertThat(buzzList.size(), is(2));
+    assertThat(buzzList.contains(-9), is(true));
+    assertThat(buzzList.contains(-999), is(true));
+  }
+
+  @Test
+  void performFizzBuzz_WithBuzzNumbers_AndFuzzNumbers() {
+
+    List&lt;Integer&gt; fuzzAndBuzzNumbers = new ArrayList&lt;&gt;();
+    fuzzAndBuzzNumbers.add(-101);
+    fuzzAndBuzzNumbers.add(5);
+    fuzzAndBuzzNumbers.add(-1250);
+    fuzzAndBuzzNumbers.add(-9);
+    fuzzAndBuzzNumbers.add(999);
+
+    FizzBuzzManager fizzBuzzManager = new FizzBuzzManager();
+    List&lt;Integer&gt; buzzList = fizzBuzzManager.performFizzBuzz(fuzzAndBuzzNumbers).buzzResults();
+    List&lt;Integer&gt; fuzzList = fizzBuzzManager.performFizzBuzz(fuzzAndBuzzNumbers).fizzResults();
+
+    assertThat(buzzList, is(notNullValue()));
+    assertThat(buzzList.size(), is(2));
+    assertThat(buzzList.contains(-9), is(true));
+    assertThat(buzzList.contains(999), is(true));
+
+    assertThat(fuzzList, is(notNullValue()));
+    assertThat(fuzzList.size(), is(2));
+    assertThat(fuzzList.contains(5), is(true));
+    assertThat(fuzzList.contains(-1250), is(true));
+  }
+}
+                        
+                        
                         </pre>
                     </div>
                 </div>
